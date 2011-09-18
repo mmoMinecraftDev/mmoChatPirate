@@ -1,5 +1,5 @@
 name: mmoChatPirate
-main: mmo.Chat.mmoChatPirate
+main: mmo.Chat.MMOChatPirate
 version: 0.1
 website: http://forums.bukkit.org/threads/
 author: Rycochet <rycochet@rycochet.com>
