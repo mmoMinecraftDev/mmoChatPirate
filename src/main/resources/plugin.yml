@@ -1,0 +1,12 @@
+name: mmoChatPirate
+main: mmo.Chat.mmoChatPirate
+version: 0.1
+website: http://forums.bukkit.org/threads/
+author: Rycochet <rycochet@rycochet.com>
+depend: [mmoCore,mmoChat]
+
+description: Adds "Pirate" to the chat filters
+permissions:
+  mmo.chat.pirate:
+    description: Allows the use of the "Pirate" chat filter (otherwise it will be untranslated)
+    default: true
