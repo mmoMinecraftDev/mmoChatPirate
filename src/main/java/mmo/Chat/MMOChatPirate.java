@@ -18,9 +18,9 @@ package mmo.Chat;
 
 import java.util.BitSet;
 import java.util.regex.Pattern;
+import mmo.ChatAPI.MMOChatEvent;
 import mmo.Core.MMOListener;
 import mmo.Core.MMOPlugin;
-import mmo.Core.events.MMOChatEvent;
 import org.bukkit.event.Event.Priority;
 import org.bukkit.event.Event.Type;
 
