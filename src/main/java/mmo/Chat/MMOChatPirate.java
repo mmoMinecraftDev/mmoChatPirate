@@ -17,10 +17,10 @@
 package mmo.Chat;
 
 import java.util.regex.Pattern;
-import mmo.ChatAPI.MMOChatEvent;
+import mmo.Core.ChatAPI.MMOChatEvent;
+import mmo.Core.MMOListener;
 import mmo.Core.MMOPlugin;
 import mmo.Core.util.EnumBitSet;
-import mmo.CoreAPI.MMOListener;
 import org.bukkit.event.Event.Priority;
 import org.bukkit.event.Event.Type;
 
