@@ -3,7 +3,7 @@ main: mmo.Chat.MMOChatPirate
 version: 1.0
 website: http://forums.bukkit.org/threads/
 author: Rycochet <rycochet@rycochet.com>
-depend: [mmoCore,mmoChat]
+depend: [Spout,mmoCore,mmoChat]
 
 description: Adds "Pirate" to the chat filters
 permissions:
