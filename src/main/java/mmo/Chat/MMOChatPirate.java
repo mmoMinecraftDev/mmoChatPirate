@@ -1,7 +1,7 @@
 /*
- * This file is part of mmoMinecraft (https://github.com/mmoMinecraftDev).
+ * This file is part of mmoChatPirate <http://github.com/mmoMinecraftDev/mmoChatPirate>.
  *
- * mmoMinecraft is free software: you can redistribute it and/or modify
+ * mmoChatPirate is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -17,15 +17,16 @@
 package mmo.Chat;
 
 import java.util.regex.Pattern;
+
 import mmo.Core.ChatAPI.MMOChatEvent;
 import mmo.Core.MMOListener;
 import mmo.Core.MMOPlugin;
 import mmo.Core.util.EnumBitSet;
+
 import org.bukkit.event.Event.Priority;
 import org.bukkit.event.Event.Type;
 
 public class MMOChatPirate extends MMOPlugin {
-
 	static private String[][] replace = {{"\\bmy\\b", "me"},
 		{"\\bboss\\b|\\bmanager\\b", "admiral"},
 		{"\\bcaptain\\b", "Cap'n"},
@@ -116,15 +117,14 @@ public class MMOChatPirate extends MMOPlugin {
 	public void onEnable() {
 		super.onEnable();
 		pm.registerEvent(Type.CUSTOM_EVENT,
-				  new MMOListener() {
-
-					  @Override
-					  public void onMMOChat(MMOChatEvent event) {
-						  if (event.hasFilter("Pirate") && event.getPlayer().hasPermission("mmo.chat.pirate")) {
-							  event.setMessage(translate(event.getMessage()));
-						  }
-					  }
-				  }, Priority.Lowest, this);
+			new MMOListener() {
+				@Override
+				public void onMMOChat(MMOChatEvent event) {
+					if (event.hasFilter("Pirate") && event.getPlayer().hasPermission("mmo.chat.pirate")) {
+						event.setMessage(translate(event.getMessage()));
+					}
+				}
+			}, Priority.Lowest, this);
 	}
 
 	static public String translate(String text) {
