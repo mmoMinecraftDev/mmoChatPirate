@@ -1,5 +1,5 @@
 name: mmoChatPirate
-version: ${releaseVersion} b${buildNumber}
+version: ${releaseVersion}.${buildNumber}
 description: Adds "Pirate" filter to mmoChat.
 author: mmoMinecraftDev
 website: http://mmo.me.uk
