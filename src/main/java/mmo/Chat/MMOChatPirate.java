@@ -19,14 +19,14 @@ package mmo.Chat;
 import java.util.regex.Pattern;
 
 import mmo.Core.ChatAPI.MMOChatEvent;
-import mmo.Core.MMOListener;
 import mmo.Core.MMOPlugin;
 import mmo.Core.util.EnumBitSet;
 
-import org.bukkit.event.Event.Priority;
-import org.bukkit.event.Event.Type;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
 
-public class MMOChatPirate extends MMOPlugin {
+public class MMOChatPirate extends MMOPlugin implements Listener  {
 	static private String[][] replace = {{"\\bmy\\b", "me"},
 		{"\\bboss\\b|\\bmanager\\b", "admiral"},
 		{"\\bcaptain\\b", "Cap'n"},
@@ -105,26 +105,26 @@ public class MMOChatPirate extends MMOPlugin {
 		", ye scurvey dog$1",
 		"$1 Fire the cannons!",
 		", to be sure$1",
-		", I'll warrant ye$1"};
+	", I'll warrant ye$1"};
 
 	@Override
 	public EnumBitSet mmoSupport(EnumBitSet support) {
 		support.set(Support.MMO_NO_CONFIG);
 		return support;
 	}
-
+	
 	@Override
 	public void onEnable() {
 		super.onEnable();
-		pm.registerEvent(Type.CUSTOM_EVENT,
-			new MMOListener() {
-				@Override
-				public void onMMOChat(MMOChatEvent event) {
-					if (event.hasFilter("Pirate") && event.getPlayer().hasPermission("mmo.chat.pirate")) {
-						event.setMessage(translate(event.getMessage()));
-					}
-				}
-			}, Priority.Lowest, this);
+		pm.registerEvents(this, this);		
+	}
+
+	@EventHandler(priority = EventPriority.HIGH)
+	public void onMMOChat(final MMOChatEvent event) {	
+		System.out.println("Entering onMmoChatEvent");
+		if (event.hasFilter("Pirate") && event.getPlayer().hasPermission("mmo.chat.pirate")) {
+			event.setMessage(translate(event.getMessage()));
+		}
 	}
 
 	static public String translate(String text) {
