@@ -5,7 +5,7 @@
 	<name>mmoChatPirate</name>
 	<groupId>mmo.Chat</groupId>
 	<artifactId>mmoChatPirate</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.2-SNAPSHOT</version>
 	<url>http://github.com/mmoMinecraftDev/mmoChatPirate</url>
 	<description>Adds a "Pirate" filter to mmoChat.</description>
 

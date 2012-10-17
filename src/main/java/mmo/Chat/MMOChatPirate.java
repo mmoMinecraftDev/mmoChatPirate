@@ -120,8 +120,7 @@ public class MMOChatPirate extends MMOPlugin implements Listener  {
 	}
 
 	@EventHandler(priority = EventPriority.HIGH)
-	public void onMMOChat(final MMOChatEvent event) {	
-		System.out.println("Entering onMmoChatEvent");
+	public void onMMOChat(final MMOChatEvent event) {		
 		if (event.hasFilter("Pirate") && event.getPlayer().hasPermission("mmo.chat.pirate")) {
 			event.setMessage(translate(event.getMessage()));
 		}
